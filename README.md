@@ -26,7 +26,15 @@
 
 ## Install
 
-ClipShelf requires **macOS 14 Sonoma or later**.
+ClipShelf requires **macOS 14 Sonoma or later** and runs natively on Apple Silicon and Intel Macs.
+
+### Download
+
+1. Download `ClipShelf-<version>.zip` from the [latest release](https://github.com/lokabhiramchintada/ClipShelf/releases).
+2. Unzip it and drag **ClipShelf.app** into **Applications**.
+3. ClipShelf isn't notarized by Apple yet, so macOS blocks it the first time. Either:
+   - open it once, then go to **System Settings → Privacy & Security** and click **Open Anyway**, or
+   - run `xattr -dr com.apple.quarantine /Applications/ClipShelf.app` in Terminal, then open it.
 
 ### Build from source
 
@@ -85,6 +93,7 @@ Right-click an item for the same actions. Right-click (or <kbd>⌃</kbd>-click) 
 ./build.sh            # build build/ClipShelf.app
 ./build.sh test       # run the test suite
 ./build.sh install    # build, install to /Applications and launch
+./build.sh release    # run tests, build a universal app and zip it in build/
 scripts/make-icon.sh  # regenerate the app icon from scripts/make-icon.swift
 ```
 
